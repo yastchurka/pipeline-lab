@@ -1,0 +1,6 @@
+name: CI
+
+# run this pipeline every time someone pushes to the main branch.
+on: 
+  push:
+    branches: [main]
