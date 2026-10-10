@@ -23,3 +23,6 @@ jobs:
           ignore-unfixed: true
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
+      - name: The job has failed
+        if: ${{ failure() && steps.demo.conclusion == 'failure' }}
+        echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
