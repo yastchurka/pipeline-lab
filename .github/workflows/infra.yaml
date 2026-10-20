@@ -1,0 +1,37 @@
+# runs tofu plan on each pull to main
+on:
+  pull_request:
+    types: [opened, reopened]
+    branches:
+      - 'main'
+jobs:
+  tofu_plan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dnogu/tofu-plan@v1
+        with:
+          working-directory: ./infra
+          destroy: false
+          refresh-only: false
+          refresh: true
+          replace: ""
+          target: ""
+          target-file: ""
+          exclude: ""
+          exclude-file: ""
+          var: "foo=bar,bar=baz"
+          var-file: "variables.tfvars"
+          out: "tfplan"
+          compact-warnings: false
+          detailed-exitcode: false
+          generate-config-out: ""
+          input: false
+          json: false
+          lock: true
+          lock-timeout: "0s"
+          no-color: false
+          concise: false
+          parallelism: 10
+          state: ""
+          show-sensitive: false
