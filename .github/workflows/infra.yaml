@@ -8,7 +8,15 @@ jobs:
   tofu-plan:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Run tofu plan
-        uses: dnogu/tofu-plan@v1
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup OpenTofu
+      uses: opentofu/setup-opentofu@v1
+      with:
+        tofu_version: '1.8.0'
+    
+    - name: Run Basic Tofu Plan
+      uses: dnogu/tofu-plan@v1
+      with:
+        working-directory: ./infra
