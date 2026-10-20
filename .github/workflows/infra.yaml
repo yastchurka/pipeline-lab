@@ -19,5 +19,4 @@ jobs:
     - name: Plan Changes
       uses: coresolutionsltd/tofu-github-action@main
       with:
-        workdir: ./infra
         steps: plan
