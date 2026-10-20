@@ -11,12 +11,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
     
-    # - name: Setup OpenTofu
-    #   uses: opentofu/setup-opentofu@v1
-    #   with:
-    #     tofu_version: '1.8.0'
-    
-    - name: Plan Changes
-      uses: coresolutionsltd/tofu-github-action@main
+    - name: Setup OpenTofu
+      uses: opentofu/setup-opentofu@v1
       with:
-        steps: plan
+        tofu_version: '1.8.0'
+    
+    - name: Run Basic Tofu Plan
+      uses: dnogu/tofu-plan@v1
