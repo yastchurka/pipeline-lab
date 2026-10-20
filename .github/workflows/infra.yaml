@@ -11,12 +11,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
     
-    - name: Setup OpenTofu
-      uses: opentofu/setup-opentofu@v1
-      with:
-        tofu_version: '1.8.0'
+    # - name: Setup OpenTofu
+    #   uses: opentofu/setup-opentofu@v1
+    #   with:
+    #     tofu_version: '1.8.0'
     
-    - name: Run Basic Tofu Plan
-      uses: dnogu/tofu-plan@v1
+    - name: Plan Changes
+      uses: coresolutionsltd/tofu-github-action@main
       with:
-        working-directory: ./infra
+        workdir: ./infra
+        steps: plan
