@@ -5,8 +5,10 @@ on:
     branches:
       - 'main'
 jobs:
-  tofu_plan:
+  tofu-plan:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: dnogu/tofu-plan@v1
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run tofu plan
+        uses: dnogu/tofu-plan@v1
