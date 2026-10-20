@@ -1,9 +1,9 @@
-FROM golang:1.21-alpine AS build
+FROM golang:latest-alpine AS build
 WORKDIR /src
 COPY . .
-RUN go build -o /lapp-docker main.go
+RUN go build -o /go_server main.go
 
-FROM alpine:3.19
-COPY --from=build /lapp-docker /lapp-docker
+FROM alpine:latest
+COPY --from=build /go_server /go_server
 EXPOSE 8080
-CMD ["/lapp-docker"]
+CMD ["/go_server"]
