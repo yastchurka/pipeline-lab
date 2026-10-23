@@ -1,9 +1,11 @@
 name: CI
 
 # run this pipeline every time someone pushes to the main branch.
-on: 
-  push:
-    branches: [main]
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    branches:
+      - 'main'
 
 jobs:
   build-and-scan:
