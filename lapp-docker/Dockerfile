@@ -1,4 +1,4 @@
-FROM golang:latest-alpine AS build
+FROM golang-alpine AS build
 WORKDIR /src
 COPY . .
 RUN go build -o /go_server main.go
