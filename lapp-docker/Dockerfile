@@ -7,3 +7,4 @@ FROM alpine:latest
 COPY --from=build /go_server /go_server
 EXPOSE 8080
 CMD ["/go_server"]
+RUN echo "hello there"
