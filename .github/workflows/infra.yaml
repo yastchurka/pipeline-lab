@@ -7,11 +7,12 @@ on:
 jobs:
   tofu-plan:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: terraform
     steps:
     - uses: opentofu/setup-opentofu@v2
     - run: |
-           tree
            ls -alght
-           #cd ./go_server
-           #tofu init
-           #tofu plan
+           tofu init
+           tofu plan
