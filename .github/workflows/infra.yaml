@@ -9,4 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: opentofu/setup-opentofu@v2
-    - run: tofu init
+    - run: |
+           cd ./lapp-docker
+           tofu init
+           tofu plan
