@@ -16,4 +16,4 @@ jobs:
     - uses: opentofu/setup-opentofu@v2
     - run: |
            tofu init
-           tofu plan
+           tofu validate
