@@ -9,4 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: opentofu/setup-opentofu@v2
-    - run: tofu init
+    - run: |
+           tofu init
+           tofu plan
